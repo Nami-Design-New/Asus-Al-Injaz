@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 32px;
+  direction: rtl;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Cairo', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+button,
+a {
+  color: #000;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin clearInput {
+  border: none;
+  background: none;
+  outline: none;
+}
+// colors
+$main: #191936;
+$second: #1d70b7;
+$second10: #fbfdfe;
+$text: #777777;
+$white: #fff;
+$black: #000;
+$transition: all .4s ease-in-out;
+$shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+// $linear:
+// ********************************** //
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  background: $white;
+  box-shadow: $shadow;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  nav {
+    height: 100%;
+    position: static !important;
+    .logo {
+      flex: 1;
+      img {
+        height: 58px;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      flex: 3;
+      li {
+        padding: 0 16px;
+        button {
+          @include clearInput();
+          font-weight: 700;
+          color: $main;
+          font-size: 14px;
+          &::after {
+            content: "\f107";
+            font-family: "Font Awesome 6 pro";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-45%);
+            left: -16px;
+          }
+        }
+        a {
+          font-weight: 700;
+          color: $main;
+          font-size: 14px;
+          position: relative;
+          transition: $transition;
+          &::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            opacity: 0;
+            transform: translateY(-20%) scale(0);
+            background: linear-gradient(to right, #191936, #1d70b7);
+            transition: $transition;
+          }
+          &.active,
+          &:hover {
+            color: $second;
+            &::after {
+              opacity: 1;
+              transform: translateY(-20%) scale(1);
+            }
+          }
+        }
+        .dropdown-menu {
+          border: 0;
+          box-shadow: $shadow;
+          li {
+            padding: 0 4px;
+            a {
+              color: $main;
+              font-weight: 600 !important;
+              font-size: 14px !important;
+              text-align: start;
+              &:hover {
+                background: none;
+              }
+              &::after {
+                right: 4px;
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        position: absolute;
+        top: 80px;
+        right: -50%;
+        width: 50%;
+        background: $white;
+        flex-direction: column;
+        height: calc(100vh - 80px);
+        justify-content: flex-start;
+        padding: 32px 0;
+        li {
+          padding: 8px 24px;
+          button::after {
+            left: 12px;
+          }
+          .dropdown-menu {
+            height: auto;
+            a {
+              text-align: start !important;
+            }
+          }
+        }
+        transition: $transition;
+        &.show {
+          right: 0;
+        }
+      }
+    }
+    .btns {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      @media (max-width: 992px) {
+        display: none;
+      }
+      a {
+        padding: 0 12px;
+        font-size: 12px;
+        font-weight: 400;
+        border-radius: 4px;
+        &:first-child {
+          border: 1px solid $main;
+          color: $main;
+        }
+        &:nth-child(2) {
+          background: linear-gradient(to right, #191936, #1d70b7);
+          color: $white;
+        }
+      }
+    }
+    .menu-btn {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      display: none;
+      z-index: 2;
+      flex: 1;
+      @media (max-width: 992px) {
+        @include centerFlex();
+        justify-content: flex-end;
+      }
+      .menu-bar {
+        position: relative;
+        height: 2px;
+        width: 28px;
+        background-color: $main;
+        transition: 0.5s ease;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: -9px;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background-color: $main;
+          transition: 0.5s ease;
+        }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -9px;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background-color: $main;
+          transition: 0.5s ease;
+        }
+        &.menu-transform {
+          background-color: transparent;
+          transform: rotate(90deg);
+          &::before {
+            -webkit-transform: translate(0px, 10px) rotate(135deg);
+            transform: translate(0px, 9px) rotate(135deg);
+          }
+          &::after {
+            -webkit-transform: translate(0px, -10px) rotate(-135deg);
+            transform: translate(0px, -9px) rotate(-135deg);
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  .hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @media (max-width: 768px) {
+      height: 120vh;
+    }
+    .video_wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          rgba(23, 23, 51, 0.922),
+          rgba(23, 23, 51, 0.65)
+        );
+      }
+    }
+    .container {
+      @include centerAbsolute();
+      transform: translate(-50%, -35%);
+      @include centerFlex();
+      flex-direction: column;
+      .text {
+        h1 {
+          font-weight: 700;
+          color: $white;
+          text-align: center;
+          @media (max-width: 576px) {
+            font-size: 24px;
+          }
+        }
+        p {
+          text-align: center;
+          color: $white;
+          @media (max-width: 576px) {
+            font-size: 14px;
+          }
+        }
+      }
+      .find_worker {
+        width: min(850px, 100%);
+        form {
+          width: 100%;
+          padding: 16px;
+          border-radius: 8px;
+          background: $white;
+          margin-top: 32px;
+          display: flex;
+          align-items: flex-end;
+          gap: 16px;
+          @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 12px;
+          }
+          .field {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex: 2;
+            label {
+              font-weight: 700;
+              font-size: 12px;
+              color: $main;
+            }
+            .bootstrap-select {
+              direction: rtl !important;
+              width: 100% !important;
+            }
+          }
+          .recruit {
+            height: 40px;
+            border-radius: 4px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(to right, #191936, #1d70b7);
+            color: $white;
+            flex: 1;
+            padding: 0 8px;
+            @media (max-width: 768px) {
+              padding: 4px 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .about {
+    padding: 60px 12px;
+    background: $white;
+    background-image: url('../images/bg-pattern-1.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    .img {
+      border-radius: 50% 50% 0 0;
+      height: 100%;
+      overflow: hidden;
+      box-shadow: $shadow;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .bun {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        padding: 16px;
+        border-radius: 4px;
+        width: 220px;
+        border: 2px solid $white;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        h6 {
+          margin: 0;
+          font-weight: 600;
+          color: $main;
+        }
+      }
+    }
+    .about_text {
+      padding: 24px 0 0;
+      h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: $main;
+        display: flex;
+        gap: 8px;
+        span {
+          min-width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: $second10;
+          @include centerFlex();
+          i {
+            font-size: 16px;
+            color: $main;
+          }
+        }
+      }
+      p {
+        color: $text;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: $text;
+        font-size: 14px;
+        line-height: 24px;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .popular_service {
+    background: $second10;
+    padding: 60px 12px;
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: $main;
+      margin-bottom: 48px;
+    }
+    .service {
+      width: 100%;
+      height: 100%;
+      padding: 24px;
+      box-shadow: $shadow;
+      background: $white;
+      border-radius: 8px;
+      gap: 10px;
+      img {
+        height: 48px;
+      }
+      h6 {
+        color: $main;
+        font-size: 16px;
+        margin: 12px 0 4px;
+        font-weight: 700;
+      }
+      p {
+        font-size: 14px;
+        color: $text;
+        line-height: 24px;
+      }
+    }
+  }
+  .countries {
+    padding: 60px 12px;
+    background: #fff;
+    background-image: url(../images/world-map.webp);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    @media (max-width: 768px) {
+      background-size: cover;
+    }
+    .title {
+      @include centerFlex();
+      flex-direction: column;
+      margin-bottom: 48px;
+      gap: 8px;
+      h2 {
+        font-size: 36px;
+        color: $main;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      p {
+        color: $main;
+      }
+    }
+    .country {
+      padding: 16px;
+      border: 2px solid $white;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(5px);
+      @include centerFlex();
+      flex-direction: column;
+      gap: 12px;
+      .img {
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: $main;
+        margin: 0;
+      }
+      a {
+        color: $white;
+        background: $second;
+        width: 80%;
+        font-size: 14px;
+        padding: 4px 0;
+        text-align: center;
+        border-radius: 8px;
+        transition: $transition;
+        &:hover {
+          background: $main;
+        }
+      }
+    }
+  }
+  .statistics {
+    padding: 60px 12px;
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: $main;
+      margin-bottom: 48px;
+    }
+    .statics {
+      padding: 24px 16px;
+      background: $white;
+      box-shadow: $shadow;
+      border-radius: 8px;
+      @include centerFlex();
+      gap: 8px;
+      flex-direction: column;
+      transition: $transition;
+      i {
+        font-size: 48px;
+        color: $main;
+        transition: $transition;
+      }
+      h3 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 28px;
+        transition: $transition;
+      }
+      h4 {
+        font-size: 16px;
+        color: $main;
+        font-weight: 700;
+        transition: $transition;
+      }
+      &:hover {
+        background: linear-gradient(to right, #191936, #1d70b7);
+        transform: translateY(-12px);
+        h3,
+        h4,
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+  .howitworks {
+    padding: 60px 12px;
+    background: $white;
+    .title {
+      @include centerFlex();
+      flex-direction: column;
+      margin-bottom: 48px;
+      gap: 8px;
+      h2 {
+        font-size: 32px;
+        color: $main;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      p {
+        color: $main;
+      }
+    }
+  }
+}
+footer {
+  padding: 60px 12px 16px;
+  background: linear-gradient(12deg, #191936, #1d5eb7);
+  .logo {
+    img {
+      height: 120px;
+    }
+  }
+  p {
+    color: $white;
+    font-weight: 40;
+    line-height: 24px;
+    margin-top: 24px;
+  }
+  .social {
+    display: flex;
+    margin-top: 16px;
+    gap: 12px;
+    a {
+      width: 40px;
+      height: 40px;
+      @include centerFlex();
+      background: $white;
+      border-radius: 50%;
+      transition: $transition;
+      i {
+        color: $main;
+      }
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
+  }
+  .copy {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid $white;
+    @include centerFlex();
+    p {
+      margin: 0;
+    }
+  }
+}
+// @override
+.dropdown-item.active,
+.dropdown-item:active {
+  background: $second;
+}
+.btn-default {
+  border: 1px solid #eee !important;
+}
+.bootstrap-select.dropup .dropdown-toggle:after {
+  transform: rotate(-45deg) translateY(-50%);
+  height: 0.5em;
+  width: 0.5em;
+}
