@@ -614,6 +614,101 @@ main .howitworks .title h2 {
 main .howitworks .title p {
   color: #191936;
 }
+main .howitworks .allSteps {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 20px 0px;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+@media (max-width: 768px) {
+  main .howitworks .allSteps {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+}
+main .howitworks .allSteps::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #1d70b7;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+@media (max-width: 768px) {
+  main .howitworks .allSteps::before {
+    display: none;
+  }
+}
+main .howitworks .allSteps .step {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  height: 180px;
+  width: 100%;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  main .howitworks .allSteps .step {
+    height: 140px;
+    margin: 32px 0 !important;
+  }
+}
+main .howitworks .allSteps .step .step_num {
+  position: absolute;
+  bottom: -16px;
+}
+main .howitworks .allSteps .step .step_num span {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1d70b7;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .howitworks .allSteps .step .text h6 {
+  color: #777777;
+  font-size: 14px;
+}
+main .howitworks .allSteps .step .icon {
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: linear-gradient(12deg, #191936, #1d5eb7);
+}
+main .howitworks .allSteps .step .icon img {
+  height: 36px;
+}
+main .howitworks .allSteps .step:nth-child(even) {
+  margin-top: 180px;
+  padding-bottom: 0px;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  main .howitworks .allSteps .step:nth-child(even) {
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+}
+main .howitworks .allSteps .step:nth-child(even) .step_num {
+  top: -16px;
+  bottom: initial;
+}
+@media (max-width: 768px) {
+  main .howitworks .allSteps .step:nth-child(even) .step_num {
+    bottom: -16px;
+    top: initial;
+  }
+}
 
 footer {
   padding: 60px 12px 16px;
@@ -648,6 +743,76 @@ footer .social a i {
 }
 footer .social a:hover {
   transform: translateY(-4px);
+}
+footer .footer_head {
+  color: #fff;
+}
+footer .footer_head_after {
+  width: 130px;
+  height: 4px;
+  background: #fff;
+  position: relative;
+  display: block;
+  border-radius: 2px;
+}
+footer .footer_head_after::after {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  content: "";
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+}
+footer .links {
+  margin-top: 24px;
+}
+footer .links li {
+  margin-bottom: 4px;
+}
+footer .links li a {
+  color: #fff;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+footer .links li a::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+footer .links li a:hover {
+  padding-right: 16px;
+}
+footer .links li a:hover::after {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+footer .links_contact {
+  margin-top: 24px;
+}
+footer .links_contact li {
+  margin-bottom: 8px;
+}
+footer .links_contact li i,
+footer .links_contact li b,
+footer .links_contact li a {
+  color: #fff;
+}
+footer .links_contact li i {
+  margin-left: 8px;
+}
+footer .links_contact li b {
+  font-size: 14px;
 }
 footer .copy {
   margin-top: 32px;
