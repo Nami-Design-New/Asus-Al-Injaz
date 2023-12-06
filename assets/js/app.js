@@ -29,3 +29,11 @@ window.onscroll = function () {
     started = true;
   }
 };
+function highlight(el) {
+  el.previousElementSibling.classList.add("h");
+}
+function dehighlight(el) {
+  if (el.value === "") {
+    el.previousElementSibling.classList.remove("h");
+  }
+}

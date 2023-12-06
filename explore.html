@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة أسس الإنجاز</title>
+    <link rel="shortcut icon" href="assets/images/fav.svg" type="image/x-icon">
+    <!-- *** css *** -->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- *** header *** -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a class="logo" href="index.html">
+                    <img src="assets/images/logoh.svg" alt="">
+                </a>
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html" class="active">الرئيسية</a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                عن الاستقدام
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="">حقوق وواجبات صاحب العمل</a></li>
+                                <li><a class="dropdown-item" href="">حقوق وواجبات العماله</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                خدماتنا
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="explore.html">طلب استقدام</a></li>
+                                <li><a class="dropdown-item" href="explore.html">إيجار عمالة</a></li>
+                                <li><a class="dropdown-item" href="explore.html">نقل عمالة</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                الدعم والمساعدة
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="contact.html">تواصل معنا</a></li>
+                                <li><a class="dropdown-item" href="FAQs.html">الأسئلة الشائعة</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btns">
+                    <a href="login.html">تسجيل الدخول</a>
+                    <a href="register.html">إنشاء حساب</a>
+                </div>
+                <div class="menu-btn">
+                    <div class="menu-bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- *** main *** -->
+    <main>
+        <!-- *** pages header *** -->
+        <section class="page_header">
+            <h1>طلب استقدام</h1>
+            <!-- <h1>إيجار عمالة</h1> -->
+            <!-- <h1>نقل عمالة</h1> -->
+            <h6><a href="index.html">الرئيسية</a> / طلب إستقدام</h6>
+        </section>
+        <!-- *** explore Cvs *** -->
+        <section class="exploreCVs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 p-2">
+                        <div class="exploreFilter">
+                            <form action="">
+                                <h3>اكتشف عمالتك بسهولة</h3>
+                                <div class="field">
+                                    <label for="age"><i class="fa-light fa-hourglass-start"></i> السن</label>
+                                    <select id="age" class="selectpicker" data-style="btn-default">
+                                        <option>كل الأعمار</option>
+                                        <option>من 23 الى 30 سنة</option>
+                                        <option>من 31 الى 36 سنة</option>
+                                        <option>من 37 الى 44 سنة</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="job"><i class="fa-light fa-briefcase"></i> الوظيفة</label>
+                                    <select id="job" class="selectpicker" data-style="btn-default">
+                                        <option>كل الوظائف</option>
+                                        <option>عاملة منزلية</option>
+                                        <option>سائق خاص</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="nationality"><i class="fa-sharp fa-regular fa-flag"></i> الجنسية</label>
+                                    <select id="nationality" class="selectpicker" data-style="btn-default">
+                                        <option>كل الجنسيات</option>
+                                        <option>الفلبين</option>
+                                        <option>اوغندا</option>
+                                        <option>أثيوبيا</option>
+                                        <option>غنيا</option>
+                                    </select>
+                                </div>
+                                <button class="apply">
+                                    تطبيق
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-12 ps-lg-4 ps-0">
+                        <div class="row">
+                            <div class="col-12 p-2">
+                                <div class="cv">
+                                    <div class="cv_details">
+                                        <div class="img">
+                                            <a href="assets/images/cv1.jpg" data-fancybox="w1">
+                                                <img src="assets/images/cv1.jpg" alt="cv1">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <ul>
+                                                <li>
+                                                    <span>الجنسية</span>
+                                                    <h3>بنجلاديش</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الراتب</span>
+                                                    <h3>1000 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>رقم الجواز</span>
+                                                    <h3>Ep0188947789</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الديانة </span>
+                                                    <h3>مسلمة</h3>
+                                                </li>
+                                                <li>
+                                                    <span>سعر الاستقدام</span>
+                                                    <h3>2864 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الوظيفة</span>
+                                                    <h3>عاملة منزلية</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <a href="recruit-order.html">طلب إستقدام</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="cv">
+                                    <div class="cv_details">
+                                        <div class="img">
+                                            <a href="assets/images/cv2.jpg" data-fancybox="w2">
+                                                <img src="assets/images/cv2.jpg" alt="cv2">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <ul>
+                                                <li>
+                                                    <span>الجنسية</span>
+                                                    <h3>بنجلاديش</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الراتب</span>
+                                                    <h3>1000 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>رقم الجواز</span>
+                                                    <h3>Ep0188947789</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الديانة </span>
+                                                    <h3>مسلمة</h3>
+                                                </li>
+                                                <li>
+                                                    <span>سعر الاستقدام</span>
+                                                    <h3>2864 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الوظيفة</span>
+                                                    <h3>عاملة منزلية</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <a href="recruit-order.html">إيجار العمالة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="cv">
+                                    <div class="cv_details">
+                                        <div class="img">
+                                            <a href="assets/images/cv3.jpg" data-fancybox="w3">
+                                                <img src="assets/images/cv3.jpg" alt="cv3">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <ul>
+                                                <li>
+                                                    <span>الجنسية</span>
+                                                    <h3>بنجلاديش</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الراتب</span>
+                                                    <h3>1000 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>رقم الجواز</span>
+                                                    <h3>Ep0188947789</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الديانة </span>
+                                                    <h3>مسلمة</h3>
+                                                </li>
+                                                <li>
+                                                    <span>سعر الاستقدام</span>
+                                                    <h3>2864 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الوظيفة</span>
+                                                    <h3>عاملة منزلية</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <a href="recruit-order.html">نقل العمالة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="cv">
+                                    <div class="cv_details">
+                                        <div class="img">
+                                            <a href="assets/images/cv3.jpg" data-fancybox="w3">
+                                                <img src="assets/images/cv3.jpg" alt="cv3">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <ul>
+                                                <li>
+                                                    <span>الجنسية</span>
+                                                    <h3>بنجلاديش</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الراتب</span>
+                                                    <h3>1000 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>رقم الجواز</span>
+                                                    <h3>Ep0188947789</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الديانة </span>
+                                                    <h3>مسلمة</h3>
+                                                </li>
+                                                <li>
+                                                    <span>سعر الاستقدام</span>
+                                                    <h3>2864 ر.س</h3>
+                                                </li>
+                                                <li>
+                                                    <span>الوظيفة</span>
+                                                    <h3>عاملة منزلية</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <a href="recruit-order.html">طلب إستقدام</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="paginations">
+                                    <div class="prev paginations_btn disabled">
+                                        <i class="fa-regular fa-chevron-right"></i>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>1</span>
+                                        </li>
+                                        <li>
+                                            <span>2</span>
+                                        </li>
+                                        <li>
+                                            <span>3</span>
+                                        </li>
+                                    </ul>
+                                    <div class="next paginations_btn">
+                                        <i class="fa-regular fa-chevron-left"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- *** footer *** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-lg-0 mb-4">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logowhite.svg" alt="" />
+                    </a>
+                    <p>
+                        مرحبًا بك في موقع شركة اسس الانجاز للاستقدام. نقدم خدمات الاستقدام بكفاءة عالية وتنوع. اكتشف
+                        خدماتنا وجعل حياتك المنزلية أسهل. للتواصل، اتصل بنا اليوم.
+                    </p>
+                    <ul class="social">
+                        <li>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-lg-0 mb-4">
+                    <h4 class="footer_head">
+                        روابط مفيده
+                    </h4>
+                    <span class="footer_head_after"></span>
+                    <ul class="links">
+                        <li>
+                            <a href="services.html">خدماتنا</a>
+                        </li>
+                        <li>
+                            <a href="Recruitment-steps.html">خطوات الاستقدام</a>
+                        </li>
+                        <li>
+                            <a href="FAQs.html">الأسئلة الشائعة</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">تواصل معنا</a>
+                        </li>
+                        <li>
+                            <a href="profile.html"> حسابى</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <h4 class="footer_head">
+                        ابقى على اتصال معنا
+                    </h4>
+                    <span class="footer_head_after"></span>
+                    <ul class="links_contact">
+                        <li>
+                            <i class="fa-sharp fa-regular fa-location-dot"></i><b>عنوان مقرنا: </b>
+                            <a
+                                href="https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D8%A3%D8%B3%D8%B3+%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D8%A7%D8%B2+%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%E2%80%AD/@24.8154273,46.7778357,15z/data=!4m2!3m1!1s0x0:0x4bf41f66a325c69f?sa=X&ved=2ahUKEwjN5_zxqfqCAxVpQ6QEHTqRDE4Q_BJ6BAgYEAA">
+                                الرياض حي اليرموك
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-light fa-envelope"></i><b>البريد الإلكتروني: </b>
+                            <a href="mailto:assusalengaz@gmail.com">assusalengaz@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-light fa-phone"></i><b>الدعم الفنى</b>
+                            <a href="tel:+0553123833">0553123833+</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <div class="copy">
+                        <p>&copy; 2023 جميع الحقوق محفوظة لدى شركة اسس الانجاز للاستقدام </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- *** Js *** -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
