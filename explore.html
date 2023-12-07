@@ -77,19 +77,42 @@
     <main>
         <!-- *** pages header *** -->
         <section class="page_header">
-            <h1>طلب استقدام</h1>
-            <!-- <h1>إيجار عمالة</h1> -->
-            <!-- <h1>نقل عمالة</h1> -->
+            <h1>تصفح العمالة</h1>
             <h6><a href="index.html">الرئيسية</a> / طلب إستقدام</h6>
         </section>
         <!-- *** explore Cvs *** -->
         <section class="exploreCVs">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 p-2">
-                        <div class="exploreFilter">
+                    <div class="col-lg-4 p-2">
+                        <div class="small-filter-header">
+                            <h6> بحث متقدم </h6>
+                            <button class="openfilter">
+                                <i class="fa-light fa-sliders"></i>
+                            </button>
+                        </div>
+                        <div class="exploreFilter" id="sideMenu">
                             <form action="">
-                                <h3>اكتشف عمالتك بسهولة</h3>
+                                <div class="head">
+                                    <h3>بحث متقدم</h3>
+                                    <div class="colse">
+                                        <i class="fa-light fa-xmark"></i>
+                                    </div>
+                                </div>
+                                <div class="deps">
+                                    <label for="reqruitment">
+                                        <h6>إستقدم</h6>
+                                        <input type="radio" name="dep" checked id="reqruitment">
+                                    </label>
+                                    <label for="rent">
+                                        <h6>إيجار</h6>
+                                        <input type="radio" name="dep" id="rent">
+                                    </label>
+                                    <label for="move-service">
+                                        <h6>نقل خدمات</h6>
+                                        <input type="radio" name="dep" id="move-service">
+                                    </label>
+                                </div>
                                 <div class="field">
                                     <label for="age"><i class="fa-light fa-hourglass-start"></i> السن</label>
                                     <select id="age" class="selectpicker" data-style="btn-default">
@@ -117,15 +140,24 @@
                                         <option>غنيا</option>
                                     </select>
                                 </div>
+                                <div class="field">
+                                    <label for="religion"><i class="fa-sharp fa-person-praying"></i> الجنسية</label>
+                                    <select id="religion" class="selectpicker" data-style="btn-default">
+                                        <option>كل الديانات</option>
+                                        <option>مسلم </option>
+                                        <option>مسيحى</option>
+                                        <option>اخرى</option>
+                                    </select>
+                                </div>
                                 <button class="apply">
                                     تطبيق
                                 </button>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-9 col-12 ps-lg-4 ps-0">
-                        <div class="row">
-                            <div class="col-12 p-2">
+                    <div class="col-lg-8 col-12">
+                        <div class="row w-100 m-auto">
+                            <div class="col-12 p-lg-2 pe-0 ps-0 pt-3 pb-3">
                                 <div class="cv">
                                     <div class="cv_details">
                                         <div class="img">
@@ -145,7 +177,7 @@
                                                 </li>
                                                 <li>
                                                     <span>رقم الجواز</span>
-                                                    <h3>Ep0188947789</h3>
+                                                    <h3>Ep01889</h3>
                                                 </li>
                                                 <li>
                                                     <span>الديانة </span>
@@ -167,7 +199,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 p-2">
+                            <div class="col-12 p-lg-2 pe-0 ps-0 pt-3 pb-3">
                                 <div class="cv">
                                     <div class="cv_details">
                                         <div class="img">
@@ -187,7 +219,7 @@
                                                 </li>
                                                 <li>
                                                     <span>رقم الجواز</span>
-                                                    <h3>Ep0188947789</h3>
+                                                    <h3>Ep01889</h3>
                                                 </li>
                                                 <li>
                                                     <span>الديانة </span>
@@ -205,11 +237,11 @@
                                         </div>
                                     </div>
                                     <div class="button">
-                                        <a href="recruit-order.html">إيجار العمالة</a>
+                                        <a href="renting.html">إيجار العمالة</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 p-2">
+                            <div class="col-12 p-lg-2 pe-0 ps-0 pt-3 pb-3">
                                 <div class="cv">
                                     <div class="cv_details">
                                         <div class="img">
@@ -229,7 +261,7 @@
                                                 </li>
                                                 <li>
                                                     <span>رقم الجواز</span>
-                                                    <h3>Ep0188947789</h3>
+                                                    <h3>Ep01889</h3>
                                                 </li>
                                                 <li>
                                                     <span>الديانة </span>
@@ -246,17 +278,21 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    <!-- notice the class whatsapp if cv in  "نقل خدمات" -->
                                     <div class="button">
-                                        <a href="recruit-order.html">نقل العمالة</a>
+                                        <a href="https://wa.me/" class="whatsapp" target="_blank">
+                                            نقل خدمات
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 p-2">
+                            <div class="col-12 p-lg-2 pe-0 ps-0 pt-3 pb-3">
                                 <div class="cv">
                                     <div class="cv_details">
                                         <div class="img">
-                                            <a href="assets/images/cv3.jpg" data-fancybox="w3">
-                                                <img src="assets/images/cv3.jpg" alt="cv3">
+                                            <a href="assets/images/cv4.jpg" data-fancybox="w4">
+                                                <img src="assets/images/cv4.jpg" alt="cv4">
                                             </a>
                                         </div>
                                         <div class="info">
@@ -271,7 +307,7 @@
                                                 </li>
                                                 <li>
                                                     <span>رقم الجواز</span>
-                                                    <h3>Ep0188947789</h3>
+                                                    <h3>Ep01889</h3>
                                                 </li>
                                                 <li>
                                                     <span>الديانة </span>
@@ -354,7 +390,7 @@
                     <span class="footer_head_after"></span>
                     <ul class="links">
                         <li>
-                            <a href="services.html">خدماتنا</a>
+                            <a href="explore.html">خدماتنا</a>
                         </li>
                         <li>
                             <a href="Recruitment-steps.html">خطوات الاستقدام</a>
@@ -405,6 +441,17 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/bootstrap-select.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+        let openFilter = document.querySelector('.openfilter');
+        let sideMenu = document.getElementById("sideMenu");
+        let close = document.querySelector(".colse");
+        openFilter.addEventListener('click', () => {
+            sideMenu.classList.add("active");
+        })
+        close.addEventListener('click', () => {
+            sideMenu.classList.remove("active");
+        })
+    </script>
 </body>
 
 </html>

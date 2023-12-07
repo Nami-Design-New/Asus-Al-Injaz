@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة أسس الإنجاز</title>
+    <link rel="shortcut icon" href="assets/images/fav.svg" type="image/x-icon">
+    <!-- *** css *** -->
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.css">
+    <link rel="stylesheet" href="assets/css/bs-stepper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- *** header *** -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a class="logo" href="index.html">
+                    <img src="assets/images/logoh.svg" alt="">
+                </a>
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html" class="active">الرئيسية</a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                عن الاستقدام
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="">حقوق وواجبات صاحب العمل</a></li>
+                                <li><a class="dropdown-item" href="">حقوق وواجبات العماله</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                خدماتنا
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="explore.html">طلب استقدام</a></li>
+                                <li><a class="dropdown-item" href="explore.html">إيجار عمالة</a></li>
+                                <li><a class="dropdown-item" href="explore.html">نقل عمالة</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                الدعم والمساعدة
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="contact.html">تواصل معنا</a></li>
+                                <li><a class="dropdown-item" href="FAQs.html">الأسئلة الشائعة</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btns">
+                    <a href="login.html">تسجيل الدخول</a>
+                    <a href="register.html">إنشاء حساب</a>
+                </div>
+                <div class="menu-btn">
+                    <div class="menu-bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- *** main *** -->
+    <main>
+        <!-- *** pages header *** -->
+        <section class="page_header">
+            <h1>إيجار العمالة</h1>
+            <h6><a href="index.html">الرئيسية</a> / اختار عنوان</h6>
+        </section>
+        <!-- *** explore Cvs *** -->
+        <section class="rentingWorkers">
+            <div class="container">
+                <div class="bs-stepper vertical">
+                    <div class="bs-stepper-header">
+                        <!-- location step btn -->
+                        <div class="step" data-target="#location">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-circle">
+                                    <img src="assets/images/location.png" alt="location">
+                                </span>
+                                <span class="bs-stepper-label">
+                                    <span class="bs-stepper-title">العنوان</span>
+                                    <span class="bs-stepper-subtitle">قم باختيار العنوان ..</span>
+                                </span>
+                            </button>
+                        </div>
+                        <!-- package step btn -->
+                        <div class="step" data-target="#package">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-circle">
+                                    <img src="assets/images/package.png" alt="package">
+                                </span>
+                                <span class="bs-stepper-label">
+                                    <span class="bs-stepper-title">اختر الباقة</span>
+                                    <span class="bs-stepper-subtitle">قم باختيار الباقة المناسبة لك ..</span>
+                                </span>
+                            </button>
+                        </div>
+                        <!-- confirm step btn -->
+                        <div class="step" data-target="#confirm">
+                            <button type="button" class="step-trigger">
+                                <span class="bs-stepper-circle">
+                                    <img src="assets/images/confirm.png" alt="confirm">
+                                </span>
+                                <span class="bs-stepper-label">
+                                    <span class="bs-stepper-title">تأكيد طلب تأجير</span>
+                                    <span class="bs-stepper-subtitle">
+                                        قم بتأكيد طلبك ثم ادفع بالطريقة اللي تناسبك ..
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bs-stepper-content">
+                        <form id="wizard-property-listing-form" onSubmit="return false">
+                            <!-- location step -->
+                            <div id="location" class="content">
+                                <div class="row">
+                                    <div class="col-12 p-2 d-flex justify-content-end">
+                                        <button class="addLoation" data-bs-toggle="modal"
+                                            data-bs-target="#addLocation">إضافة عنوان
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <label for="l1">
+                                            <div class="location">
+                                                <h6>المنزل</h6>
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa-light fa-user"></i> على الدوسرى
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa-light fa-phone"></i> 9660512345678+
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa-light fa-location-dot"></i> الرياض , ابي بكر الرازي
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input checked type="radio" name="location" id="l1">
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <label for="l2">
+                                            <div class="location">
+                                                <h6>العمل</h6>
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa-light fa-user"></i> على الدوسرى
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa-light fa-phone"></i> 9558997979970+
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa-light fa-location-dot"></i> الرياض حي اليرموك
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input type="radio" name="location" id="l2">
+                                        </label>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end mt-4 p-2">
+                                        <button class="btn-next">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">التالى</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- package step -->
+                            <div id="package" class="content">
+                                <div class="row">
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <label for="p1">
+                                            <div class="location">
+                                                <h6>باقة <span>30</span> يوم</h6>
+                                                <ul>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>سعر الباقة قبل الخصم</p> <span>2100 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>قيمة الخصم</p> <span>198 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>سعر الباقة بعد الخصم</p> <span>1904 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>الإجمالي بالضريبة</p> <span>2190 ر.س</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input checked type="radio" name="package" id="p1">
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <label for="p2">
+                                            <div class="location">
+                                                <h6>باقة <span>90</span> يوم</h6>
+                                                <ul>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>سعر الباقة قبل الخصم</p> <span>63000 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>قيمة الخصم</p> <span>560 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>سعر الباقة بعد الخصم</p> <span>5740 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>الإجمالي بالضريبة</p> <span>6600 ر.س</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input type="radio" name="package" id="p2">
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <label for="p3">
+                                            <div class="location">
+                                                <h6>باقة <span>180</span> يوم</h6>
+                                                <ul>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>سعر الباقة قبل الخصم</p> <span>10000 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>قيمة الخصم</p> <span>1000 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>سعر الباقة بعد الخصم</p> <span>9000 ر.س</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center justify-content-between">
+                                                        <p>الإجمالي بالضريبة</p> <span>9900 ر.س</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input type="radio" name="package" id="p3">
+                                        </label>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between mt-4 p-2">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                        </button>
+                                        <button class="btn btn-primary btn-next">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">التالى</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- confirm step -->
+                            <div id="confirm" class="content">
+                                <div class="row">
+                                    <div class="col-12 p-2">
+                                        <div class="cv">
+                                            <div class="cv_details">
+                                                <div class="img">
+                                                    <a href="assets/images/cv1.jpg" data-fancybox="w1">
+                                                        <img src="assets/images/cv1.jpg" alt="cv1">
+                                                    </a>
+                                                </div>
+                                                <div class="info">
+                                                    <ul>
+                                                        <li>
+                                                            <span>الجنسية</span>
+                                                            <h3>بنجلاديش</h3>
+                                                        </li>
+                                                        <li>
+                                                            <span>الراتب</span>
+                                                            <h3>1000 ر.س</h3>
+                                                        </li>
+                                                        <li>
+                                                            <span>رقم الجواز</span>
+                                                            <h3>Ep01889</h3>
+                                                        </li>
+                                                        <li>
+                                                            <span>الديانة </span>
+                                                            <h3>مسلمة</h3>
+                                                        </li>
+                                                        <li>
+                                                            <span>سعر الاستقدام</span>
+                                                            <h3>2864 ر.س</h3>
+                                                        </li>
+                                                        <li>
+                                                            <span>الوظيفة</span>
+                                                            <h3>عاملة منزلية</h3>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <div class="llocation">
+                                            <h6>المنزل</h6>
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-user"></i> على الدوسرى
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-phone"></i> 9660512345678+
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-location-dot"></i> الرياض , ابي بكر الرازي
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12 p-2">
+                                        <div class="ppackage">
+                                            <h6>باقة <span>180</span> يوم</h6>
+                                            <ul>
+                                                <li class="d-flex align-items-center justify-content-between">
+                                                    <p>سعر الباقة قبل الخصم</p> <span>10000 ر.س</span>
+                                                </li>
+                                                <li class="d-flex align-items-center justify-content-between">
+                                                    <p>قيمة الخصم</p> <span>1000 ر.س</span>
+                                                </li>
+                                                <li class="d-flex align-items-center justify-content-between">
+                                                    <p>سعر الباقة بعد الخصم</p> <span>9000 ر.س</span>
+                                                </li>
+                                                <li class="d-flex align-items-center justify-content-between">
+                                                    <p>الإجمالي بالضريبة</p> <span>9900 ر.س</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-2 d-flex gap-1">
+                                        <input type="checkbox" class="check" name="accept" id="accept">
+                                        <label for="accept" class="accept">الموافقة على
+                                            <a href="term-conditions.html">الشروط والأحكام</a>
+                                        </label>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between mt-4 p-2">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <span class="align-middle d-sm-inline-block d-none">السابق</span>
+                                        </button>
+                                        <button class="btn btn-primary btn-next" data-bs-toggle="modal"
+                                            data-bs-target="#payModal">
+                                            <span class="align-middle d-sm-inline-block d-none me-sm-1">
+                                                تأكيد ودفع
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <!-- *** footer *** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-lg-0 mb-4">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logowhite.svg" alt="" />
+                    </a>
+                    <p>
+                        مرحبًا بك في موقع شركة اسس الانجاز للاستقدام. نقدم خدمات الاستقدام بكفاءة عالية وتنوع. اكتشف
+                        خدماتنا وجعل حياتك المنزلية أسهل. للتواصل، اتصل بنا اليوم.
+                    </p>
+                    <ul class="social">
+                        <li>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-lg-0 mb-4">
+                    <h4 class="footer_head">
+                        روابط مفيده
+                    </h4>
+                    <span class="footer_head_after"></span>
+                    <ul class="links">
+                        <li>
+                            <a href="explore.html">خدماتنا</a>
+                        </li>
+                        <li>
+                            <a href="Recruitment-steps.html">خطوات الاستقدام</a>
+                        </li>
+                        <li>
+                            <a href="FAQs.html">الأسئلة الشائعة</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">تواصل معنا</a>
+                        </li>
+                        <li>
+                            <a href="profile.html"> حسابى</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <h4 class="footer_head">
+                        ابقى على اتصال معنا
+                    </h4>
+                    <span class="footer_head_after"></span>
+                    <ul class="links_contact">
+                        <li>
+                            <i class="fa-sharp fa-regular fa-location-dot"></i><b>عنوان مقرنا: </b>
+                            <a
+                                href="https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D8%A3%D8%B3%D8%B3+%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D8%A7%D8%B2+%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%E2%80%AD/@24.8154273,46.7778357,15z/data=!4m2!3m1!1s0x0:0x4bf41f66a325c69f?sa=X&ved=2ahUKEwjN5_zxqfqCAxVpQ6QEHTqRDE4Q_BJ6BAgYEAA">
+                                الرياض حي اليرموك
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-light fa-envelope"></i><b>البريد الإلكتروني: </b>
+                            <a href="mailto:assusalengaz@gmail.com">assusalengaz@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-light fa-phone"></i><b>الدعم الفنى</b>
+                            <a href="tel:+0553123833">0553123833+</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <div class="copy">
+                        <p>&copy; 2023 جميع الحقوق محفوظة لدى شركة اسس الانجاز للاستقدام </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- *** pay model *** -->
+    <div class="modal fade" id="payModal" tabindex="-1" aria-labelledby="payModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="payModal">
+                        <ul>
+                            <li>
+                                <label for="mada">
+                                    <div class="paymethod">
+                                        <h6>مدى</h6>
+                                        <img src="assets/images/mada.png" alt="">
+                                    </div>
+                                    <input checked type="radio" name="pay-method" id="mada">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="visa">
+                                    <div class="paymethod">
+                                        <h6>فيزا</h6>
+                                        <img src="assets/images/visa.png" alt="">
+                                    </div>
+                                    <input type="radio" name="pay-method" id="visa">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="masterCard">
+                                    <div class="paymethod">
+                                        <h6>ماستركارد</h6>
+                                        <img src="assets/images/master-card.png" alt="">
+                                    </div>
+                                    <input type="radio" name="pay-method" id="masterCard">
+                                </label>
+                            </li>
+                            <button>
+                                الدفع
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- *** add location modal *** -->
+    <div class="modal fade add_location" id="addLocation" tabindex="-1" aria-labelledby="addLocationLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-wrap" action="#">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 p-2">
+                                <div class="form-group">
+                                    <label for="locationName">
+                                        <i class="fa-light fa-map-pin"></i>
+                                        إسم العنوان
+                                    </label>
+                                    <input id="locationName" name="locationName" type="text" placeholder="مثال المنزل">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2">
+                                <div class="form-group">
+                                    <label for="reciever">
+                                        <i class="fa-light fa-user"></i>
+                                        إسم المستلم
+                                    </label>
+                                    <input id="reciever" name="reciever" type="text" placeholder="إكتب الإسم بالكامل">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2">
+                                <div class="form-group">
+                                    <label for="phone">
+                                        <i class="fa-light fa-phone"></i>
+                                        رقم الجوال
+                                    </label>
+                                    <input id="phone" name="phone" type="tel" placeholder="+996 0XXXXXXXX">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2">
+                                <div class="form-group">
+                                    <label for="address">
+                                        <i class="fa-light fa-location-dot"></i>
+                                        العنوان
+                                    </label>
+                                    <input id="address" name="address" type="text"
+                                        placeholder="مثال: الرياض , ابي بكر الرازي">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 p-2">
+                                <div class="form-group">
+                                    <label for="details">
+                                        <i class="fa-regular fa-comment-dots"></i>
+                                        تفاصيل إضافية
+                                    </label>
+                                    <textarea name="details" id="details"
+                                        placeholder="إكتب تفاصيل إضافية عن العنوان"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 p-2">
+                                <div class="form-group mb-0">
+                                    <button>
+                                        حفظ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- *** Js *** -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script src="assets/js/bs-stepper.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            var stepper = new Stepper($('.bs-stepper')[0]);
+            $('.btn-next').on('click', function () {
+                stepper.next();
+            });
+            $('.btn-prev').on('click', function () {
+                stepper.previous();
+            });
+        });
+    </script>
+</body>
+
+</html>

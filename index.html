@@ -459,7 +459,7 @@
                     <span class="footer_head_after"></span>
                     <ul class="links">
                         <li>
-                            <a href="services.html">خدماتنا</a>
+                            <a href="explore.html">خدماتنا</a>
                         </li>
                         <li>
                             <a href="Recruitment-steps.html">خطوات الاستقدام</a>
@@ -510,6 +510,27 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/bootstrap-select.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+        let numbers = document.querySelectorAll(".num");
+        let started = false;
+        function startCount(element) {
+            let goal = element.dataset.goal;
+            let count = setInterval(() => {
+                element.textContent++;
+                if (element.textContent == goal) {
+                    clearInterval(count);
+                }
+            }, 2500 / goal);
+        }
+        window.onscroll = function () {
+            if (this.scrollY >= document.querySelector(".countries").offsetTop) {
+                if (!started) {
+                    numbers.forEach((num) => startCount(num));
+                }
+                started = true;
+            }
+        };
+    </script>
 </body>
 
 </html>

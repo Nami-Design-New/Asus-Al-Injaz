@@ -268,7 +268,7 @@ main .hero {
 }
 @media (max-width: 768px) {
   main .hero {
-    height: 120vh;
+    height: 110vh;
   }
 }
 main .hero .video_wrapper {
@@ -991,6 +991,39 @@ main .contact_section .contact_info .field:hover .icon::after {
 main .exploreCVs {
   padding: 60px 12px;
 }
+main .exploreCVs .small-filter-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+  padding: 0 2px;
+}
+main .exploreCVs .small-filter-header h6 {
+  color: #191936;
+  margin: 0;
+}
+main .exploreCVs .small-filter-header button {
+  border: none;
+  background: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #c8e1f6;
+  padding: 8px;
+  border-radius: 8px;
+}
+main .exploreCVs .small-filter-header button i {
+  font-size: 18px;
+  color: #191936;
+}
+@media (max-width: 992px) {
+  main .exploreCVs .small-filter-header {
+    display: flex;
+  }
+}
 main .exploreCVs .exploreFilter {
   padding: 24px 16px;
   background: #fff;
@@ -999,9 +1032,66 @@ main .exploreCVs .exploreFilter {
   position: sticky;
   top: 100px;
 }
-main .exploreCVs .exploreFilter h3 {
+main .exploreCVs .exploreFilter .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .exploreCVs .exploreFilter .head h3 {
   font-size: 18px;
   color: #191936;
+  margin-bottom: 8px;
+}
+main .exploreCVs .exploreFilter .head .colse {
+  display: none;
+  cursor: pointer;
+}
+main .exploreCVs .exploreFilter .head .colse i {
+  font-size: 24px;
+  color: #191936;
+}
+main .exploreCVs .exploreFilter .deps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+main .exploreCVs .exploreFilter .deps label {
+  cursor: pointer;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+main .exploreCVs .exploreFilter .deps label h6 {
+  font-size: 14px;
+  color: #191936;
+  margin: 0;
+  white-space: nowrap;
+}
+main .exploreCVs .exploreFilter .deps label input {
+  z-index: -1;
+  position: absolute;
+  left: 0 !important;
+  cursor: pointer;
+  top: 0;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid #c8e1f6;
+  background: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+main .exploreCVs .exploreFilter .deps label input:checked {
+  border-color: #1d70b7;
+  background: #c8e1f6;
 }
 main .exploreCVs .exploreFilter form {
   display: flex;
@@ -1038,6 +1128,30 @@ main .exploreCVs .exploreFilter form .apply {
 }
 main .exploreCVs .exploreFilter form .apply:hover {
   background: #191936;
+}
+@media (max-width: 992px) {
+  main .exploreCVs .exploreFilter {
+    display: block;
+    position: fixed;
+    top: 100%;
+    z-index: 9999;
+    overflow-y: scroll;
+    width: 100%;
+    background: #fff;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+    height: 100vh;
+    padding: 32px 24px !important;
+  }
+  main .exploreCVs .exploreFilter .head .colse {
+    display: block;
+  }
+  main .exploreCVs .exploreFilter::-webkit-scrollbar {
+    display: none;
+  }
+  main .exploreCVs .exploreFilter.active {
+    top: 0;
+  }
 }
 main .exploreCVs .paginations {
   margin-top: 24px;
@@ -1078,6 +1192,274 @@ main .exploreCVs .paginations ul li span {
        columns: #191936;
   cursor: pointer;
 }
+main .exploreCVs .select_cutomer_services {
+  width: 100%;
+  padding: 24px 16px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+}
+main .exploreCVs .select_cutomer_services h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #191936;
+  margin-bottom: 8px;
+}
+main .exploreCVs .select_cutomer_services p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+}
+main .exploreCVs .select_cutomer_services .agents {
+  margin: 24px 0 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+main .exploreCVs .select_cutomer_services .agents label {
+  cursor: pointer;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 4px;
+  padding: 8px 12px;
+  min-width: 126px;
+}
+main .exploreCVs .select_cutomer_services .agents label .agent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+main .exploreCVs .select_cutomer_services .agents label .agent img {
+  height: 64px;
+}
+main .exploreCVs .select_cutomer_services .agents label .agent h6 {
+  font-size: 14px;
+  color: #191936;
+  margin: 0;
+  white-space: nowrap;
+}
+main .exploreCVs .select_cutomer_services .agents label input {
+  z-index: -1;
+  position: absolute;
+  left: 0 !important;
+  cursor: pointer;
+  top: 0;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid #c8e1f6;
+  background: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+main .exploreCVs .select_cutomer_services .agents label input:checked {
+  border-color: #1d70b7;
+  background: #c8e1f6;
+}
+main .exploreCVs .select_cutomer_services button {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  background: #1d70b7;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+}
+main .exploreCVs .select_cutomer_services button:hover {
+  background: #191936;
+}
+main .rentingWorkers {
+  padding: 60px 12px;
+}
+main .rentingWorkers .bs-stepper-header {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+}
+main .rentingWorkers .bs-stepper-header .step {
+  margin-bottom: 12px;
+}
+main .rentingWorkers .bs-stepper-header .step .bs-stepper-circle {
+  min-width: 48px;
+  height: 48px;
+}
+main .rentingWorkers .bs-stepper-header .step .bs-stepper-circle img {
+  height: 32px;
+}
+main .rentingWorkers .btn-next {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 8px 16px;
+  background: #1d70b7;
+  border-radius: 4px;
+  color: #fff;
+  transition: all 0.4s ease-in-out;
+}
+main .rentingWorkers .btn-next:hover {
+  background: #191936;
+}
+main .rentingWorkers .addLoation {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+  border: 1px solid #1d70b7;
+  color: #1d70b7;
+  border-radius: 4px;
+}
+main .rentingWorkers label {
+  cursor: pointer;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+  padding: 16px;
+}
+main .rentingWorkers label .location {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .rentingWorkers label .location h6 {
+  color: #191936;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+main .rentingWorkers label .location h6 span {
+  font-size: 24px;
+}
+main .rentingWorkers label .location ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main .rentingWorkers label .location ul li {
+  color: #777777;
+  font-size: 14px;
+}
+main .rentingWorkers label .location ul li i {
+  font-size: 16px;
+}
+main .rentingWorkers label input {
+  z-index: -1;
+  position: absolute;
+  left: 0 !important;
+  top: 0;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid #c8e1f6;
+  background: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+main .rentingWorkers label input:checked {
+  border-color: #1d70b7;
+  background: #c8e1f6;
+}
+main .rentingWorkers .cv {
+  box-shadow: none;
+  background: #edf4fa;
+}
+main .rentingWorkers .ppackage,
+main .rentingWorkers .llocation {
+  background: #f6f6f6;
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+main .rentingWorkers .ppackage h6,
+main .rentingWorkers .llocation h6 {
+  color: #191936;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+main .rentingWorkers .ppackage h6 span,
+main .rentingWorkers .llocation h6 span {
+  font-size: 24px;
+}
+main .rentingWorkers .ppackage ul,
+main .rentingWorkers .llocation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main .rentingWorkers .ppackage ul li,
+main .rentingWorkers .llocation ul li {
+  color: #777777;
+  font-size: 14px;
+}
+main .rentingWorkers .ppackage ul li i,
+main .rentingWorkers .llocation ul li i {
+  font-size: 16px;
+}
+main .rentingWorkers .accept {
+  padding: 0;
+  border-radius: 0;
+  flex-direction: row;
+}
+main .rentingWorkers .accept a {
+  color: #1d70b7;
+  padding-right: 4px;
+}
+main .rentingWorkers .accept a:hover {
+  text-decoration: underline;
+}
+main .rentingWorkers input[type=checkbox] {
+  width: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  cursor: pointer;
+}
+main .rentingWorkers input[type=checkbox]::after {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  content: "";
+  font-family: "FontAwesome";
+  width: 16px;
+  height: 16px;
+  border: 1px solid #c8e1f6;
+  border-radius: 4px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #191936;
+}
+main .rentingWorkers input[type=checkbox]:checked::after {
+  content: "\f00c";
+  background: #1d70b7;
+  color: #fff;
+  border-color: #1d70b7;
+}
 
 .cv {
   width: 100%;
@@ -1094,15 +1476,21 @@ main .exploreCVs .paginations ul li span {
   display: flex;
   gap: 32px;
 }
+@media (max-width: 576px) {
+  .cv .cv_details {
+    gap: 24px;
+  }
+}
 .cv .cv_details .img {
   width: 100%;
   flex: 2;
 }
 .cv .cv_details .img img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: top;
      object-position: top;
 }
@@ -1119,20 +1507,45 @@ main .exploreCVs .paginations ul li span {
 .cv .cv_details .info ul li span {
   font-size: 14px;
 }
+@media (max-width: 576px) {
+  .cv .cv_details .info ul li span {
+    font-size: 12px;
+  }
+}
 .cv .cv_details .info ul li h3 {
   font-size: 18px;
   font-weight: 700;
   color: #191936;
+}
+@media (max-width: 576px) {
+  .cv .cv_details .info ul li h3 {
+    font-size: 14px;
+  }
 }
 .cv .button a {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 8px;
   color: #fff;
   background: #1d70b7;
   border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+}
+.cv .button a:hover {
+  background: #191936;
+}
+.cv .button a.whatsapp {
+  background: #c4e7c0;
+  color: #139d03;
+}
+.cv .button a.whatsapp i {
+  margin-right: 4px;
+}
+.cv .button a.whatsapp:hover {
+  background: #139d03;
+  color: #fff;
 }
 
 footer {
@@ -1251,6 +1664,157 @@ footer .copy p {
   margin: 0;
 }
 
+.confirm_model {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.confirm_model img {
+  height: 130px;
+}
+.confirm_model p {
+  line-height: 26px;
+  color: #777777;
+  text-align: center;
+}
+.confirm_model a {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+  border-radius: 4px;
+}
+.confirm_model a.whatsapp {
+  background: #c4e7c0;
+  color: #139d03;
+}
+.confirm_model a.whatsapp i {
+  margin-right: 4px;
+}
+.confirm_model a.whatsapp:hover {
+  background: #139d03;
+  color: #fff;
+}
+.confirm_model a.phone {
+  background: #c8e1f6;
+  color: #191936;
+}
+.confirm_model a.phone i {
+  margin-right: 4px;
+}
+.confirm_model a.phone:hover {
+  background: #1d70b7;
+  color: #fff;
+}
+
+.add_location .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.add_location .form-group label {
+  color: #191936;
+  font-size: 14px;
+  font-weight: 600;
+}
+.add_location .form-group input {
+  outline: none;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+.add_location .form-group textarea {
+  outline: none;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  height: 120px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.add_location .form-group button {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  background: #1d70b7;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+.add_location .form-group button:hover {
+  background: #191936;
+}
+
+.payModal ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.payModal ul label {
+  cursor: pointer;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+  padding: 16px;
+}
+.payModal ul label .paymethod {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.payModal ul label .paymethod h6 {
+  color: #191936;
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+.payModal ul label input {
+  z-index: -1;
+  position: absolute;
+  left: 0 !important;
+  top: 0;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid #c8e1f6;
+  background: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+.payModal ul label input:checked {
+  border-color: #1d70b7;
+  background: #c8e1f6;
+}
+.payModal button {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  background: #1d70b7;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+.payModal button:hover {
+  background: #191936;
+}
+
 .dropdown-item.active,
 .dropdown-item:active {
   background: #1d70b7;
@@ -1269,4 +1833,9 @@ footer .copy p {
 .dropdown-menu.show {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.modal {
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }/*# sourceMappingURL=style.css.map */

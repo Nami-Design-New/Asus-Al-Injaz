@@ -71,6 +71,7 @@ a {
 $main: #191936;
 $second: #1d70b7;
 $second10: #fbfdfe;
+$second30: #c8e1f6;
 $text: #777777;
 $white: #fff;
 $black: #000;
@@ -278,7 +279,7 @@ main {
     height: 100vh;
     position: relative;
     @media (max-width: 768px) {
-      height: 120vh;
+      height: 110vh;
     }
     .video_wrapper {
       width: 100%;
@@ -951,6 +952,31 @@ main {
   }
   .exploreCVs {
     padding: 60px 12px;
+    .small-filter-header {
+      width: 100%;
+      @include space-between();
+      display: none;
+      padding: 0 2px;
+      h6 {
+        color: $main;
+        margin: 0;
+      }
+      button {
+        @include clearInput();
+        @include centerFlex();
+        box-shadow: $shadow;
+        background: $second30;
+        padding: 8px;
+        border-radius: 8px;
+        i {
+          font-size: 18px;
+          color: $main;
+        }
+      }
+      @media (max-width: 992px) {
+        display: flex;
+      }
+    }
     .exploreFilter {
       padding: 24px 16px;
       background: $white;
@@ -958,9 +984,60 @@ main {
       border-radius: 8px;
       position: sticky;
       top: 100px;
-      h3 {
-        font-size: 18px;
-        color: $main;
+      .head {
+        @include space-between();
+        h3 {
+          font-size: 18px;
+          color: $main;
+          margin-bottom: 8px;
+        }
+        .colse {
+          display: none;
+          cursor: pointer;
+          i {
+            font-size: 24px;
+            color: $main;
+          }
+        }
+      }
+      .deps {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        label {
+          cursor: pointer;
+          isolation: isolate;
+          @include centerFlex();
+          flex-direction: column;
+          position: relative;
+          border-radius: 4px;
+          padding: 8px 12px;
+          h6 {
+            font-size: 14px;
+            color: $main;
+            margin: 0;
+            white-space: nowrap;
+          }
+          input {
+            z-index: -1;
+            position: absolute;
+            left: 0 !important;
+            cursor: pointer;
+            top: 0;
+            width: 100%;
+            appearance: none;
+            background: none;
+            height: 100%;
+            border-radius: 4px;
+            border: 2px solid $second30;
+            background: #fafafa;
+            transition: all .3s ease-in-out;
+            &:checked {
+              border-color: $second;
+              background: $second30;
+            }
+          }
+        }
       }
       form {
         display: flex;
@@ -994,6 +1071,28 @@ main {
           &:hover {
             background: $main;
           }
+        }
+      }
+      @media (max-width: 992px) {
+        display: block;
+        position: fixed;
+        top: 100%;
+        z-index: 9999;
+        overflow-y: scroll;
+        width: 100%;
+        background: $white;
+        left: 0;
+        transition: $transition;
+        height: 100vh;
+        padding: 32px 24px !important;
+        .head .colse {
+          display: block;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        &.active {
+          top: 0;
         }
       }
     }
@@ -1031,6 +1130,251 @@ main {
         }
       }
     }
+    .select_cutomer_services {
+      width: 100%;
+      padding: 24px 16px;
+      background: $white;
+      box-shadow: $shadow;
+      border-radius: 8px;
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: $main;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 24px;
+        color: $text;
+      }
+      .agents {
+        margin: 24px 0 16px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        label {
+          cursor: pointer;
+          isolation: isolate;
+          @include centerFlex();
+          flex-direction: column;
+          position: relative;
+          border-radius: 4px;
+          padding: 8px 12px;
+          min-width: 126px;
+          .agent {
+            width: 100%;
+            @include centerFlex();
+            flex-direction: column;
+            gap: 8px;
+            img {
+              height: 64px;
+            }
+            h6 {
+              font-size: 14px;
+              color: $main;
+              margin: 0;
+              white-space: nowrap;
+            }
+          }
+          input {
+            z-index: -1;
+            position: absolute;
+            left: 0 !important;
+            cursor: pointer;
+            top: 0;
+            width: 100%;
+            appearance: none;
+            background: none;
+            height: 100%;
+            border-radius: 4px;
+            border: 2px solid $second30;
+            background: #fafafa;
+            transition: all .3s ease-in-out;
+            &:checked {
+              border-color: $second;
+              background: $second30;
+            }
+          }
+        }
+      }
+      button {
+        width: 100%;
+        @include clearInput();
+        background: $second;
+        color: $white;
+        padding: 8px;
+        border-radius: 4px;
+        transition: $transition;
+        &:hover {
+          background: $main;
+        }
+      }
+    }
+  }
+  .rentingWorkers {
+    padding: 60px 12px;
+    .bs-stepper-header {
+      background: $white;
+      box-shadow: $shadow;
+      border-radius: 8px;
+      .step {
+        margin-bottom: 12px;
+        .bs-stepper-circle {
+          min-width: 48px;
+          height: 48px;
+          img {
+            height: 32px;
+          }
+        }
+      }
+    }
+    .btn-next {
+      @include clearInput();
+      padding: 8px 16px;
+      background: $second;
+      border-radius: 4px;
+      color: $white;
+      transition: $transition;
+      &:hover {
+        background: $main;
+      }
+    }
+    .addLoation {
+      padding: 8px 16px;
+      @include clearInput();
+      border: 1px solid $second;
+      color: $second;
+      border-radius: 4px;
+    }
+    label {
+      cursor: pointer;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      border-radius: 8px;
+      padding: 16px;
+      .location {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        h6 {
+          color: $main;
+          font-weight: 700;
+          margin-bottom: 8px;
+          font-size: 20px;
+          span {
+            font-size: 24px;
+          }
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            color: $text;
+            font-size: 14px;
+            i {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      input {
+        z-index: -1;
+        position: absolute;
+        left: 0 !important;
+        top: 0;
+        width: 100%;
+        appearance: none;
+        background: none;
+        height: 100%;
+        border-radius: 4px;
+        border: 2px solid $second30;
+        background: #fafafa;
+        transition: all .3s ease-in-out;
+        &:checked {
+          border-color: $second;
+          background: $second30;
+        }
+      }
+    }
+    .cv {
+      box-shadow: none;
+      background: #edf4fa;
+    }
+    .ppackage,
+    .llocation {
+      background: #f6f6f6;
+      width: 100%;
+      border-radius: 8px;
+      height: 100%;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      h6 {
+        color: $main;
+        font-weight: 700;
+        margin-bottom: 8px;
+        font-size: 20px;
+        span {
+          font-size: 24px;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          color: $text;
+          font-size: 14px;
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .accept {
+      padding: 0;
+      border-radius: 0;
+      flex-direction: row;
+      a {
+        color: $second;
+        padding-right: 4px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    input[type="checkbox"] {
+      width: 16px;
+      appearance: none;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        content: "";
+        font-family: "FontAwesome";
+        width: 16px;
+        height: 16px;
+        border: 1px solid $second30;
+        border-radius: 4px;
+        font-size: 10px;
+        @include centerFlex();
+        color: $main;
+      }
+      &:checked::after {
+        content: "\f00c";
+        background: $second;
+        color: #fff;
+        border-color: $second;
+      }
+    }
   }
 }
 .cv {
@@ -1046,13 +1390,17 @@ main {
   .cv_details {
     display: flex;
     gap: 32px;
+    @media (max-width: 576px) {
+      gap: 24px;
+    }
     .img {
       width: 100%;
       flex: 2;
       img {
         width: 100%;
+        height: 100%;
         aspect-ratio: 3 / 2;
-        object-fit: cover;
+        object-fit: contain;
         object-position: top;
       }
     }
@@ -1065,11 +1413,17 @@ main {
           width: 50%;
           span {
             font-size: 14px;
+            @media (max-width: 576px) {
+              font-size: 12px;
+            }
           }
           h3 {
             font-size: 18px;
             font-weight: 700;
             color: $main;
+            @media (max-width: 576px) {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -1078,10 +1432,25 @@ main {
   .button a {
     width: 100%;
     @include centerFlex();
-    padding: 4px;
+    padding: 8px;
     color: $white;
     background: $second;
     border-radius: 4px;
+    transition: $transition;
+    &:hover {
+      background: $main;
+    }
+    &.whatsapp {
+      background: #c4e7c0;
+      color: #139d03;
+      i {
+        margin-right: 4px;
+      }
+      &:hover {
+        background: #139d03;
+        color: $white;
+      }
+    }
   }
 }
 footer {
@@ -1197,6 +1566,150 @@ footer {
     }
   }
 }
+.confirm_model {
+  @include centerFlex();
+  flex-direction: column;
+  gap: 12px;
+  img {
+    height: 130px;
+  }
+  p {
+    line-height: 26px;
+    color: $text;
+    text-align: center;
+  }
+  a {
+    width: 100% !important;
+    @include centerFlex();
+    padding: 8px;
+    transition: $transition;
+    color: $white;
+    border-radius: 4px;
+    &.whatsapp {
+      background: #c4e7c0;
+      color: #139d03;
+      i {
+        margin-right: 4px;
+      }
+      &:hover {
+        background: #139d03;
+        color: $white;
+      }
+    }
+    &.phone {
+      background: $second30;
+      color: $main;
+      i {
+        margin-right: 4px;
+      }
+      &:hover {
+        background: $second;
+        color: $white;
+      }
+    }
+  }
+}
+.add_location {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    label {
+      color: $main;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input {
+      outline: none;
+      border: none;
+      background: #eee;
+      border-radius: 4px;
+      height: 48px;
+      padding: 0 12px;
+      font-size: 14px;
+    }
+    textarea {
+      outline: none;
+      border: none;
+      background: #eee;
+      border-radius: 4px;
+      height: 120px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    button {
+      outline: none;
+      border: none;
+      width: 100%;
+      padding: 8px;
+      background: $second;
+      border-radius: 4px;
+      transition: $transition;
+      color: $white;
+      &:hover {
+        background: $main;
+      }
+    }
+  }
+}
+.payModal {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    label {
+      cursor: pointer;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      border-radius: 8px;
+      padding: 16px;
+      .paymethod {
+        width: 100%;
+        @include space-between();
+        h6 {
+          color: $main;
+          font-weight: 600;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+      }
+      input {
+        z-index: -1;
+        position: absolute;
+        left: 0 !important;
+        top: 0;
+        width: 100%;
+        appearance: none;
+        background: none;
+        height: 100%;
+        border-radius: 4px;
+        border: 2px solid $second30;
+        background: #fafafa;
+        transition: all .3s ease-in-out;
+        &:checked {
+          border-color: $second;
+          background: $second30;
+        }
+      }
+    }
+  }
+  button {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 8px;
+    background: $second;
+    border-radius: 4px;
+    transition: $transition;
+    color: $white;
+    &:hover {
+      background: $main;
+    }
+  }
+}
 // @override
 .dropdown-item.active,
 .dropdown-item:active {
@@ -1212,4 +1725,7 @@ footer {
 }
 .dropdown-menu.show {
   width: fit-content;
+}
+.modal {
+  backdrop-filter: blur(4px);
 }
