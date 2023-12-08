@@ -165,6 +165,12 @@ header {
             }
           }
         }
+        &.bttns{
+          display: none;
+          @media (max-width: 992px) {
+            display: block;
+          }
+        }
       }
       @media (max-width: 992px) {
         position: absolute;
@@ -738,7 +744,8 @@ main {
     background-repeat: no-repeat;
     h1 {
       color: $main;
-      font-size: 42px;
+      font-size: 32px;
+      font-weight: 600;
       margin-bottom: 8px;
     }
     h6 {
@@ -1305,37 +1312,6 @@ main {
       box-shadow: none;
       background: #edf4fa;
     }
-    .ppackage,
-    .llocation {
-      background: #f6f6f6;
-      width: 100%;
-      border-radius: 8px;
-      height: 100%;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      h6 {
-        color: $main;
-        font-weight: 700;
-        margin-bottom: 8px;
-        font-size: 20px;
-        span {
-          font-size: 24px;
-        }
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        li {
-          color: $text;
-          font-size: 14px;
-          i {
-            font-size: 16px;
-          }
-        }
-      }
-    }
     .accept {
       padding: 0;
       border-radius: 0;
@@ -1373,6 +1349,276 @@ main {
         background: $second;
         color: #fff;
         border-color: $second;
+      }
+    }
+  }
+  .auth_section {
+    padding: 50px 12px;
+  }
+  .setting_setion {
+    padding: 60px 12px;
+    .profile_side_bar {
+      background: $white;
+      box-shadow: $shadow;
+      padding: 24px;
+      border-radius: 8px;
+      position: sticky;
+      top: 100px;
+      h4 {
+        font-size: 22px;
+        color: $main;
+        margin-bottom: 4px;
+        font-weight: 700;
+      }
+      span {
+        color: $second;
+      }
+      .links {
+        margin-top: 24px;
+        li {
+          padding: 8px 16px;
+          margin-bottom: 8px;
+          cursor: pointer;
+          border-radius: 4px;
+          transition: .4s ease-in-out;
+          a {
+            color: $main;
+            transition: .4s ease-in-out;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+          &:last-child {
+            a {
+              color: red;
+            }
+          }
+          &:hover,
+          &.active {
+            background: $second;
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    .notification {
+      width: 100%;
+      padding: 12px 16px;
+      background: $white;
+      box-shadow: $shadow;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      p {
+        font-size: 16px;
+        color: $main;
+        font-weight: 600;
+      }
+    }
+    .orders {
+      .nav {
+        background: $second;
+        width: min(100%, 460px);
+        padding: 8px;
+        border-radius: 8px;
+        li {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button {
+            width: 100%;
+            color: $white;
+            &:hover {
+              color: $white;
+            }
+            &.active {
+              background: $white;
+              color: $second;
+              &:hover {
+                color: $second;
+              }
+            }
+          }
+        }
+      }
+      .order_card {
+        padding: 16px;
+        background: $white;
+        box-shadow: $shadow;
+        border-radius: 8px;
+        height: 100%;
+        h4 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+        .title {
+          display: flex;
+          justify-content: space-between;
+          p {
+            color: $second;
+            font-size: 18px;
+            font-weight: 700;
+          }
+          a {
+            color: $second;
+            font-size: 14px;
+          }
+        }
+        .pro {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          margin-bottom: 8px;
+          .progress {
+            height: 8px;
+            background: $second30;
+            .progress-bar {
+              background: $second;
+            }
+          }
+          .staus {
+            p {
+              margin: 0;
+              color: $main;
+              font-size: 14px;
+              color: $text;
+            }
+          }
+        }
+        .time {
+          color: $text;
+          font-size: 12px;
+        }
+      }
+    }
+    .order_status {
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .progress_state {
+        @include space-between();
+        gap: 12px;
+        h4 {
+          margin: 0;
+          color: $main;
+          font-size: 18px;
+          font-weight: 700;
+        }
+        h6 {
+          font-size: 14px;
+          margin: 0;
+          color: $main;
+          font-weight: 700;
+          span{
+            font-size: 18px;
+            color: $second;
+          }
+        }
+        .icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          @include centerFlex();
+          color: $white;
+          font-size: 24px;
+          background: linear-gradient(12deg, #191936, #1d5eb7);
+        }
+      }
+      .progress,
+      .progress-stacked {
+        height: 8px;
+        background: $second30;
+        .progress-bar {
+          background: $second;
+        }
+      }
+    }
+  }
+  .faqs {
+    padding: 30px 12px;
+    .faqs-content {
+      padding-top: 60px;
+      h3 {
+        font-size: 24px;
+        color: $second;
+        font-weight: 600;
+        margin-bottom: 28px;
+        i {
+          transform: scaleX(-1);
+        }
+      }
+    }
+    .accordion-button {
+      text-align: inherit;
+      color: $main;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 0;
+      &:focus {
+        outline: none !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      &::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 pro';
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        transform: none;
+        margin-right: auto;
+        margin-left: 0;
+      }
+      &:not(.collapsed) {
+        background: none !important;
+        box-shadow: none !important;
+        color: $second;
+        background: none !important;
+        &::after {
+          content: '\f106';
+        }
+      }
+    }
+    .accordion-body {
+      padding: 16px 0 !important;
+    }
+    .accordion-item {
+      border-top: 0 !important;
+      border-right: 0 !important;
+      border-left: 0 !important;
+      border-bottom: 1px solid #eee !important;
+      border-radius: 0 !important;
+      p {
+        font-size: 14px;
+        color: $text;
+      }
+      &:last-child {
+        border-bottom: 0 !important;
+      }
+    }
+  }
+  .terms {
+    padding: 60px 12px;
+    p {
+      font-size: 14px;
+      color: $text;
+      line-height: 24px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      li {
+        h2 {
+          font-size: 18px;
+          font-weight: 700;
+          color: $second;
+        }
       }
     }
   }
@@ -1707,6 +1953,200 @@ footer {
     color: $white;
     &:hover {
       background: $main;
+    }
+  }
+}
+.auth_form {
+  background: $white;
+  box-shadow: $shadow;
+  padding: 36px 24px 24px;
+  border-radius: 8px;
+  @include centerFlex();
+  flex-direction: column;
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $main;
+    margin-bottom: 4px;
+  }
+  p {
+    margin-bottom: 24px;
+    text-align: center;
+    line-height: 24px;
+    span {
+      color: $second;
+    }
+  }
+  .input_filed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+    position: relative;
+    label {
+      font-size: 14px;
+      color: $main;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      height: 56px;
+      background: #eee;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      padding: 0 16px;
+    }
+    #phone {
+      padding: 0 64px;
+      @media (max-width: 768px) {
+        padding: 0 54px;
+      }
+    }
+    #password {
+      border-radius: 0 4px 4px 0;
+    }
+    .showPas {
+      min-width: 48px;
+      @include clearInput();
+      background: #eee;
+      border-radius: 4px 0 0 4px;
+      color: $text;
+    }
+    .phone_code {
+      width: 70px;
+      height: 56px;
+      background: #eee;
+      border-radius: 4px;
+      @include centerFlex();
+      img {
+        height: 24px;
+      }
+    }
+    &.phone {
+      &::after {
+        content: '+996';
+        position: absolute;
+        top: 48px;
+        left: 90px;
+        color: $main;
+        font-weight: 600;
+        @media (max-width: 768px) {
+          left: 80px;
+        }
+        @media (max-width: 576px) {
+          left: 70px;
+        }
+      }
+    }
+  }
+  a {
+    color: $second;
+    transition: $transition;
+    &:hover {
+      color: $main;
+    }
+  }
+  .log {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    @include clearInput();
+    background: $second;
+    color: $white;
+    margin: 12px 0;
+    transition: $transition;
+    &:hover {
+      background: $main;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .otp-container {
+    width: 100%;
+    @include space-between();
+    padding: 32px 0 24px;
+    direction: ltr !important;
+    .otp-input {
+      border-radius: 4px;
+      width: 80px;
+      direction: ltr !important;
+      @media (max-width: 576px) {
+        width: 48px;
+        height: 48px;
+      }
+      height: 60px;
+      text-align: center;
+      background: $second30;
+      font-size: 24px;
+      font-weight: 800;
+      color: $second;
+      outline: none;
+      border: none;
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
+  }
+}
+.ppackage,
+.llocation {
+  background: #f6f6f6;
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  h6 {
+    color: $main;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 20px;
+    span {
+      font-size: 24px;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      color: $text;
+      font-size: 14px;
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+}
+.cta {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  p {
+    font-size: 12px;
+    color: $text;
+    line-height: normal;
+  }
+  .btns {
+    gap: 8px;
+    display: flex;
+    a {
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      @include centerFlex();
+      background: $second30;
+      color: $second;
+      font-size: 18px;
+      &.whatsapp {
+        background: #c4e7c0;
+        color: #139d03;
+      }
     }
   }
 }
