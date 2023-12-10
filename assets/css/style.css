@@ -1684,6 +1684,11 @@ main .faqs .accordion-item:last-child {
 main .terms {
   padding: 60px 12px;
 }
+main .terms h3 {
+  color: #191936;
+  font-weight: 700;
+  font-size: 24px;
+}
 main .terms p {
   font-size: 14px;
   color: #777777;
