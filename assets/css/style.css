@@ -2302,4 +2302,84 @@ footer .copy p {
 .modal {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
+}
+
+.complain {
+  outline: none;
+  background: none;
+  border: 1px dashed #191936;
+  color: #191936;
+  padding: 4px 16px;
+  border-radius: 8px;
+}
+
+.preloader {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preloader .preloaderImg {
+  width: 100px;
+  height: 100px;
+  -webkit-mask-image: url("../images/fav.svg");
+          mask-image: url("../images/fav.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  .preloader .preloaderImg {
+    width: 80px;
+    height: 80px;
+  }
+}
+.preloader .preloaderImg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+  background-color: #191936;
+  transform: translateY(100%);
+  animation: slide-up 2.5s forwards;
+}
+@media screen and (max-width: 1024px) {
+  .preloader .preloaderImg::after {
+    width: 80px;
+    height: 80px;
+  }
+}
+.preloader .preloaderImg::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-image: url("../images/fav.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(1) opacity(0.2);
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }/*# sourceMappingURL=style.css.map */

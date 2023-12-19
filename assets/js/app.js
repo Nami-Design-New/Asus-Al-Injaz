@@ -33,3 +33,6 @@ function togglePasswordVisibility(event, passwordClass, button) {
   }
   return false;
 }
+$(document).ready(function () {
+  $(".preloader").delay(1200).fadeOut(300);
+});

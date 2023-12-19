@@ -165,7 +165,7 @@ header {
             }
           }
         }
-        &.bttns{
+        &.bttns {
           display: none;
           @media (max-width: 992px) {
             display: block;
@@ -1513,7 +1513,7 @@ main {
           margin: 0;
           color: $main;
           font-weight: 700;
-          span{
+          span {
             font-size: 18px;
             color: $second;
           }
@@ -1604,7 +1604,7 @@ main {
   }
   .terms {
     padding: 60px 12px;
-    h3{
+    h3 {
       color: $main;
       font-weight: 700;
       font-size: 24px;
@@ -2173,4 +2173,73 @@ footer {
 }
 .modal {
   backdrop-filter: blur(4px);
+}
+.complain {
+  outline: none;
+  background: none;
+  border: 1px dashed $main;
+  color: $main;
+  padding: 4px 16px;
+  border-radius: 8px;
+}
+.preloader {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .preloaderImg {
+    width: 100px;
+    height: 100px;
+    mask-image: url("../images/fav.svg");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    position: relative;
+    @media screen and (max-width: 1024px) {
+      width: 80px;
+      height: 80px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      z-index: 2;
+      background-color: $main;
+      transform: translateY(100%);
+      animation: slide-up 2.5s forwards;
+      @media screen and (max-width: 1024px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background-image: url("../images/fav.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: grayscale(1) opacity(0.2);
+    }
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+  }
 }
